@@ -189,13 +189,13 @@ int main() {
 #### Output:
 <img width="491" height="194" alt="Image" src="https://github.com/user-attachments/assets/2c58c4f8-6a75-44f4-a207-1ec7a6017f25" />
 
-Program ini menampilkan pola angka menurun dan menaik yang terpisah oleh tanda *, dengan jarak yang semakin bertambah di setiap baris, sehingga membentuk segitiga terbalik simetris.
+Program diatas menampilkan pola angka menurun dan menaik yang terpisah oleh tanda *, Sampai berbentuk segitiga terbalik.
 
 #### Full code Screenshot:
-<img width="542" height="1013" alt="Image" src="https://github.com/user-attachments/assets/ecae2246-0bca-4417-a86f-74453bacb346" />
+<img width="527" height="984" alt="Image" src="https://github.com/user-attachments/assets/72f18e04-07e9-4deb-bd0f-ad6fa7318ea5" />
 
 ## Kesimpulan
-Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].
+Pembelajaran tentang materi input / output, if else dan juga percabangan operasi aritmatika.
 
 ## Referensi
 [1] PEMROGRAMAN, ALGORITMA; FIRNANDA, MUHAMMAD ADITYA. LAPORAN PRAKTIKUM I. 2016.
