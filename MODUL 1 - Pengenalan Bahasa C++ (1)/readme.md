@@ -13,12 +13,48 @@ Berikan penjelasan teori terkait materi modul ini dengan bahasa anda sendiri ser
 #include <iostream>
 using namespace std;
 
-int main() {
-    cout << "ini adalah file code guided praktikan" << endl;
+int main () {
+    int n;
+    const float pl = 3.14;
+
+    cout << "Masukan Angka: ";
+    cin >> n;
+
+    cout << "Angka dikeluarkan: " << n << endl;
+    cout << "Nilai Konstanta pl: " << pl << endl;
+    return 0;
+}
+
+#include <iostream>
+using namespace std;
+
+int main () {
+    int a;
+    int b;
+
+    cout << "Masukan Angka1: ";
+    cin >> a;
+    cout << "Masukan Angka2: ";
+    cin >> b;
+
+    //Operator Aritmatika
+    cout << "a + b = " << (a+b) << endl;
+    cout << "a - b = " << (a-b) << endl;
+    cout << "a * b = " << (a*b) << endl;
+    cout << "a / b = " << (a/b) << endl;
+    cout << "a % b = " << (a+b) << endl;
+
+    //Operator Logika
+    cout << "a < b = " << (a<b) << endl;
+    cout << "a > b = " << (a>b) << endl;
+    cout << "a <= b = " << (a<=b) << endl;
+    cout << "a >= b = " << (a>=b) << endl;
+    cout << "a == b = " << (a==b) << endl;
+    cout << "a != b = " << (a!=b) << endl;
     return 0;
 }
 ```
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Kode di atas yang pertama digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
 
 ## Unguided 
 
@@ -29,7 +65,25 @@ Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktika
 using namespace std;
 
 int main() {
-    cout << "ini adalah file code unguided praktikan" << endl;
+
+    float bilangan1, bilangan2;
+
+    cout << "Masukkan bilangan pertama: ";
+    cin >> bilangan1;
+    cout << "Masukkan bilangan kedua: ";
+    cin >> bilangan2;
+
+    cout << "\n--- Hasil Operasi ---" << endl;
+    cout << "Penjumlahan: " << bilangan1 + bilangan2 << endl;
+    cout << "Pengurangan: " << bilangan1 - bilangan2 << endl;
+    cout << "Perkalian: " << bilangan1 * bilangan2 << endl;
+
+    if (bilangan2 != 0) {
+        cout << "Pembagian: " << bilangan1 / bilangan2 << endl;
+    } else {
+        cout << "Pembagian: Tidak bisa membagi dengan nol." << endl;
+    }
+
     return 0;
 }
 ```
@@ -41,7 +95,90 @@ Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktika
 #### Full code Screenshot:
 ![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
 
+### 2. [Soal]
 
+```C++
+#include <iostream>
+using namespace std;
+
+int main() {
+    int angka;
+   string tulisan = "";
+   string satuan[] = {"", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan"};
+
+   cout << "Masukkan angka (0-100): ";
+   cin >> angka;
+
+    if (angka < 0 || angka > 100) {
+        tulisan = "Input di luar jangkauan (0-100).";
+    } else if (angka == 0) {
+        tulisan = "nol";
+    } else if (angka == 100) {
+        tulisan = "seratus";
+    } else if (angka == 10) {
+        tulisan = "sepuluh";
+    } else if (angka == 11) {
+        tulisan = "sebelas";
+    } else if (angka < 10) {
+        tulisan = satuan[angka];
+    } else if (angka < 20) { 
+        tulisan = satuan[angka % 10] + " belas";
+    } else { 
+        int puluhan = angka / 10;
+        int sisa = angka % 10;
+        tulisan = satuan[puluhan] + " puluh";
+        if (sisa > 0) {
+            tulisan += " " + satuan[sisa];
+        }
+    }
+
+   cout << angka << " : " << tulisan <<endl;
+
+    return 0;
+}
+```
+### 3. [Soal]
+
+```C++
+#include <iostream>
+using namespace std;
+
+int main() {
+    int angka;
+   string tulisan = "";
+   string satuan[] = {"", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan"};
+
+   cout << "Masukkan angka (0-100): ";
+   cin >> angka;
+
+    if (angka < 0 || angka > 100) {
+        tulisan = "Input di luar jangkauan (0-100).";
+    } else if (angka == 0) {
+        tulisan = "nol";
+    } else if (angka == 100) {
+        tulisan = "seratus";
+    } else if (angka == 10) {
+        tulisan = "sepuluh";
+    } else if (angka == 11) {
+        tulisan = "sebelas";
+    } else if (angka < 10) {
+        tulisan = satuan[angka];
+    } else if (angka < 20) { 
+        tulisan = satuan[angka % 10] + " belas";
+    } else { 
+        int puluhan = angka / 10;
+        int sisa = angka % 10;
+        tulisan = satuan[puluhan] + " puluh";
+        if (sisa > 0) {
+            tulisan += " " + satuan[sisa];
+        }
+    }
+
+   cout << angka << " : " << tulisan <<endl;
+
+    return 0;
+}
+```
 ## Kesimpulan
 Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].
 
