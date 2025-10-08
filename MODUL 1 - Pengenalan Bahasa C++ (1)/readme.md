@@ -88,12 +88,12 @@ int main() {
 }
 ```
 #### Output:
-!<img width="579" height="199" alt="Image" src="https://github.com/user-attachments/assets/b7d08961-7632-4a40-be44-ef1fa11983c0" />
+<img width="579" height="199" alt="Image" src="https://github.com/user-attachments/assets/b7d08961-7632-4a40-be44-ef1fa11983c0" />
 
 Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
 
 #### Full code Screenshot:
-![240309_10h21m35s_screenshot](https://github.com/suxeno/Struktur-Data-Assignment/assets/111122086/41e9641c-ad4e-4e50-9ca4-a0215e336b04)
+<img width="766" height="997" alt="Image" src="https://github.com/user-attachments/assets/07861d97-f511-413c-8831-d0b4b63cb459" />
 
 ### 2. [Soal]
 
@@ -137,6 +137,13 @@ int main() {
     return 0;
 }
 ```
+#### Output:
+<img width="471" height="134" alt="Image" src="https://github.com/user-attachments/assets/20119050-15af-423d-bc7e-195246a1d398" />
+
+Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+
+#### Full code Screenshot:
+<img width="925" height="1021" alt="Image" src="https://github.com/user-attachments/assets/8cc7abeb-e87e-415e-aaf1-3166498f63c0" />
 ### 3. [Soal]
 
 ```C++
@@ -179,6 +186,13 @@ int main() {
     return 0;
 }
 ```
+#### Output:
+<img width="579" height="199" alt="Image" src="https://github.com/user-attachments/assets/b7d08961-7632-4a40-be44-ef1fa11983c0" />
+
+Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+
+#### Full code Screenshot:
+<img width="766" height="997" alt="Image" src="https://github.com/user-attachments/assets/07861d97-f511-413c-8831-d0b4b63cb459" />
 ## Kesimpulan
 Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].
 
