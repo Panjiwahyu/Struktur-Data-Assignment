@@ -140,7 +140,7 @@ int main() {
 #### Output:
 <img width="471" height="134" alt="Image" src="https://github.com/user-attachments/assets/20119050-15af-423d-bc7e-195246a1d398" />
 
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Program diatas fungsinya membaca input angka (0–100), lalu menampilkan output dalam bentuk kata.
 
 #### Full code Screenshot:
 <img width="925" height="1021" alt="Image" src="https://github.com/user-attachments/assets/8cc7abeb-e87e-415e-aaf1-3166498f63c0" />
@@ -189,10 +189,11 @@ int main() {
 #### Output:
 <img width="491" height="194" alt="Image" src="https://github.com/user-attachments/assets/2c58c4f8-6a75-44f4-a207-1ec7a6017f25" />
 
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Program ini menampilkan pola angka menurun dan menaik yang terpisah oleh tanda *, dengan jarak yang semakin bertambah di setiap baris, sehingga membentuk segitiga terbalik simetris.
 
 #### Full code Screenshot:
 <img width="542" height="1013" alt="Image" src="https://github.com/user-attachments/assets/ecae2246-0bca-4417-a86f-74453bacb346" />
+
 ## Kesimpulan
 Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].
 
