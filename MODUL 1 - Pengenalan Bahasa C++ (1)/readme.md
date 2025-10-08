@@ -7,7 +7,7 @@ Kita diperkenalkan oleh identifier lalu ada input / output disini kita di perken
 
 ## Guided 
 
-### 1. [Nama Topik]
+### 1. [Input/Output Dan Operasi Aritmatika]
 
 ```C++
 #include <iostream>
