@@ -1,5 +1,5 @@
 # <h1 align="center">Laporan Praktikum Modul Code Blocks IDE & Pengenalan Bahasa C++ (1)</h1>
-<p align="center">Arvinanto Bahtiar</p>
+<p align="center">Panji Wahyu Nugroho</p>
 
 ## Dasar Teori
 
