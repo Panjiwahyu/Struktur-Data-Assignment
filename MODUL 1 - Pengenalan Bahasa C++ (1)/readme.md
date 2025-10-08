@@ -3,7 +3,7 @@
 
 ## Dasar Teori
 
-Berikan penjelasan teori terkait materi modul ini dengan bahasa anda sendiri serta susunan yang terstruktur per topiknya.
+Kita diperkenalkan oleh identifier lalu ada input / output disini kita di perkenalkan berbagai macam operator. selanjutnya if, if else, switch. dan ada perulangan, struktur.
 
 ## Guided 
 
@@ -54,7 +54,7 @@ int main () {
     return 0;
 }
 ```
-Kode di atas yang pertama digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Kode di atas yang pertama ada input / output, lalu kedua ada Operator percabangan aritmatika
 
 ## Unguided 
 
@@ -90,7 +90,7 @@ int main() {
 #### Output:
 <img width="579" height="199" alt="Image" src="https://github.com/user-attachments/assets/b7d08961-7632-4a40-be44-ef1fa11983c0" />
 
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Kode di atas digunakan untuk mengambil dua input angka yang kita masukan dan menampilkan hasil dari empat operasi aritmatika.
 
 #### Full code Screenshot:
 <img width="766" height="997" alt="Image" src="https://github.com/user-attachments/assets/07861d97-f511-413c-8831-d0b4b63cb459" />
@@ -187,12 +187,12 @@ int main() {
 }
 ```
 #### Output:
-<img width="579" height="199" alt="Image" src="https://github.com/user-attachments/assets/b7d08961-7632-4a40-be44-ef1fa11983c0" />
+<img width="491" height="194" alt="Image" src="https://github.com/user-attachments/assets/2c58c4f8-6a75-44f4-a207-1ec7a6017f25" />
 
 Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
 
 #### Full code Screenshot:
-<img width="766" height="997" alt="Image" src="https://github.com/user-attachments/assets/07861d97-f511-413c-8831-d0b4b63cb459" />
+<img width="542" height="1013" alt="Image" src="https://github.com/user-attachments/assets/ecae2246-0bca-4417-a86f-74453bacb346" />
 ## Kesimpulan
 Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].
 
