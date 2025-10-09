@@ -65,36 +65,65 @@ Kode di atas yang pertama ada input / output, lalu kedua ada Operator percabanga
 using namespace std;
 
 int main() {
+    int A[3][3], B[3][3], C[3][3];
+    int i, j, k;
 
-    float bilangan1, bilangan2;
+    cout << "\nMasukkan elemen matriks A (3x3):\n";
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            cout << "A[" << i << "][" << j << "] = ";
+            cin >> A[i][j];
+        }
+    }
 
-    cout << "Masukkan bilangan pertama: ";
-    cin >> bilangan1;
-    cout << "Masukkan bilangan kedua: ";
-    cin >> bilangan2;
+    cout << "\nMasukkan elemen matriks B (3x3):\n";
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            cout << "B[" << i << "][" << j << "] = ";
+            cin >> B[i][j];
+        }
+    }
 
-    cout << "\n--- Hasil Operasi ---" << endl;
-    cout << "Penjumlahan: " << bilangan1 + bilangan2 << endl;
-    cout << "Pengurangan: " << bilangan1 - bilangan2 << endl;
-    cout << "Perkalian: " << bilangan1 * bilangan2 << endl;
+    cout << "\n=== HASIL PENJUMLAHAN (A + B) ===\n";
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            C[i][j] = A[i][j] + B[i][j];
+            cout << C[i][j] << "\t";
+        }
+        cout << endl;
+    }
 
-    if (bilangan2 != 0) {
-        cout << "Pembagian: " << bilangan1 / bilangan2 << endl;
-    } else {
-        cout << "Pembagian: Tidak bisa membagi dengan nol." << endl;
+    cout << "\n=== HASIL PENGURANGAN (A - B) ===\n";
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            C[i][j] = A[i][j] - B[i][j];
+            cout << C[i][j] << "\t";
+        }
+        cout << endl;
+    }
+
+    cout << "\n=== HASIL PERKALIAN (A x B) ===\n";
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            C[i][j] = 0;
+            for (k = 0; k < 3; k++) {
+                C[i][j] += A[i][k] * B[k][j];
+            }
+            cout << C[i][j] << "\t";
+        }
+        cout << endl;
     }
 
     return 0;
 }
 ```
 #### Output:
-<img width="579" height="199" alt="Image" src="https://github.com/user-attachments/assets/b7d08961-7632-4a40-be44-ef1fa11983c0" />
+<img width="311" height="487" alt="Image" src="https://github.com/user-attachments/assets/f5a8480a-02f5-4200-91b4-bd58657241a5" />
 
 Kode di atas digunakan untuk mengambil dua input angka yang kita masukan dan menampilkan hasil dari empat operasi aritmatika.
 
 #### Full code Screenshot:
-![Uploading image.png…]()
-
+<img width="421" height="970" alt="Image" src="https://github.com/user-attachments/assets/d0948005-e169-4211-9a06-7c0839c0c5f9" />
 
 ### 2. [Soal]
 
@@ -134,55 +163,84 @@ Program diatas fungsinya membaca input angka (0–100), lalu menampilkan output 
 #include <iostream>
 using namespace std;
 
+int cariMaksimum(int arr[], int n) {
+    int maks = arr[0];
+    for(int i=1; i<n; i++)
+        if(arr[i] > maks) maks = arr[i];
+    return maks;
+}
+
+int cariMinimum(int arr[], int n) {
+    int min = arr[0];
+    for(int i=1; i<n; i++)
+        if(arr[i] < min) min = arr[i];
+    return min;
+}
+
+float hitungRataRata(int arr[], int n) {
+    int total = 0;
+    for(int i=0; i<n; i++)
+        total += arr[i];
+    return (float)total / n;
+}
+
 int main() {
-    int angka;
-   string tulisan = "";
-   string satuan[] = {"", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan"};
+    int arrA[] = {11, 8, 5, 7, 12, 26, 3, 54, 33, 55};
+    int n = sizeof(arrA)/sizeof(arrA[0]);
+    int pilihan;
 
-   cout << "Masukkan angka (0-100): ";
-   cin >> angka;
+    do {
+        cout << "\n--- Menu Program Array ---\n";
+        cout << "1. Tampilkan isi array\n";
+        cout << "2. Cari nilai maksimum\n";
+        cout << "3. Cari nilai minimum\n";
+        cout << "4. Hitung nilai rata-rata\n";
 
-    if (angka < 0 || angka > 100) {
-        tulisan = "Input di luar jangkauan (0-100).";
-    } else if (angka == 0) {
-        tulisan = "nol";
-    } else if (angka == 100) {
-        tulisan = "seratus";
-    } else if (angka == 10) {
-        tulisan = "sepuluh";
-    } else if (angka == 11) {
-        tulisan = "sebelas";
-    } else if (angka < 10) {
-        tulisan = satuan[angka];
-    } else if (angka < 20) { 
-        tulisan = satuan[angka % 10] + " belas";
-    } else { 
-        int puluhan = angka / 10;
-        int sisa = angka % 10;
-        tulisan = satuan[puluhan] + " puluh";
-        if (sisa > 0) {
-            tulisan += " " + satuan[sisa];
+        cout << "Pilih: ";
+        cin >> pilihan;
+
+        switch(pilihan) {
+            case 1:
+                cout << "Isi array: ";
+                for(int i=0; i<n; i++)
+                    cout << arrA[i] << " ";
+                cout << endl;
+                break;
+            case 2:
+                cout << "Nilai maksimum: " << cariMaksimum(arrA, n) << endl;
+                break;
+            case 3:
+                cout << "Nilai minimum: " << cariMinimum(arrA, n) << endl;
+                break;
+            case 4:
+                cout << "Nilai rata-rata: " << hitungRataRata(arrA, n) << endl;
+                break;
+            case 5:
+                cout << "Program selesai.\n";
+                break;
+            default:
+                cout << "Pilihan tidak valid!\n";
         }
-    }
-
-   cout << angka << " : " << tulisan <<endl;
+    } while(pilihan != 5);
 
     return 0;
 }
+
 ```
 #### Output:
-<img width="491" height="194" alt="Image" src="https://github.com/user-attachments/assets/2c58c4f8-6a75-44f4-a207-1ec7a6017f25" />
+<img width="334" height="630" alt="Image" src="https://github.com/user-attachments/assets/7efe2201-3578-4253-82b7-1b55c953fdeb" />
 
 Program diatas menampilkan pola angka menurun dan menaik yang terpisah oleh tanda *, Sampai berbentuk segitiga terbalik.
 
 #### Full code Screenshot:
-<img width="527" height="984" alt="Image" src="https://github.com/user-attachments/assets/72f18e04-07e9-4deb-bd0f-ad6fa7318ea5" />
+<img width="479" height="911" alt="Image" src="https://github.com/user-attachments/assets/e0e09717-8c3d-4452-9c78-b87ae73a9a8a" />
 
 ## Kesimpulan
 Pembelajaran tentang materi input / output, if else dan juga percabangan operasi aritmatika.
 
 ## Referensi
 [1] PEMROGRAMAN, ALGORITMA; FIRNANDA, MUHAMMAD ADITYA. LAPORAN PRAKTIKUM I. 2016.
+
 
 
 
