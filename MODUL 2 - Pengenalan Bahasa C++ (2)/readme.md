@@ -58,7 +58,7 @@ Kode di atas yang pertama ada input / output, lalu kedua ada Operator percabanga
 
 ## Unguided 
 
-### 1. [Soal]
+### 1. [Program matriks 3x3]
 
 ```C++
 #include <iostream>
@@ -125,7 +125,7 @@ Kode di atas digunakan untuk mengambil dua input angka yang kita masukan dan men
 #### Full code Screenshot:
 <img width="421" height="970" alt="Image" src="https://github.com/user-attachments/assets/d0948005-e169-4211-9a06-7c0839c0c5f9" />
 
-### 2. [Soal]
+### 2. [Menukar nilai 3 variable]
 
 ```C++
 #include <iostream>
@@ -158,7 +158,7 @@ Program diatas fungsinya membaca input angka (0–100), lalu menampilkan output 
 #### Full code Screenshot:
 <img width="829" height="910" alt="Image" src="https://github.com/user-attachments/assets/be6ca6a2-239e-4c0c-aefa-81ef4013eff8" />
 
-### 3. [Soal]
+### 3. [Mencari nilai minimum, maksimum, dan rata - rata]
 ```C++
 #include <iostream>
 using namespace std;
@@ -236,10 +236,11 @@ Program diatas menampilkan pola angka menurun dan menaik yang terpisah oleh tand
 <img width="479" height="911" alt="Image" src="https://github.com/user-attachments/assets/e0e09717-8c3d-4452-9c78-b87ae73a9a8a" />
 
 ## Kesimpulan
-Pembelajaran tentang materi input / output, if else dan juga percabangan operasi aritmatika.
+Modul ini mengajarkan konsep dasar menggunakan array dan matriks, lalu penerapan fungsi, prosedur, pointer dalam pemrograman c++.
 
 ## Referensi
 [1] PEMROGRAMAN, ALGORITMA; FIRNANDA, MUHAMMAD ADITYA. LAPORAN PRAKTIKUM I. 2016.
+
 
 
 
