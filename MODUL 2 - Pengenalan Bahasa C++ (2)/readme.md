@@ -3,25 +3,46 @@
 
 ## Dasar Teori
 
-Pertama ada array fungsinya untuk menyimpan sekumpulan data, Array 2 dimensi untuk operasi aritmatika, pointer yang berfungsi sebagai variable yang menyimpan alamat memoridan yang terakhir ada switch case.
+Pertama ada array fungsinya untuk menyimpan sekumpulan data, Array 2 dimensi untuk operasi aritmatika, pointer yang berfungsi sebagai variable yang menyimpan alamat memori dan yang terakhir ada switch case.
 
 ## Guided 
 
-### 1. [Input/Output Dan Operasi Aritmatika]
+### 1. [Struktur Dan Perulangan]
 
 ```C++
 #include <iostream>
 using namespace std;
 
+struct Mahasiswa {
+    string nama;
+    int umur;
+};
+
 int main () {
-    int n;
-    const float pl = 3.14;
+    int jumlah;
 
-    cout << "Masukan Angka: ";
-    cin >> n;
+    cout << "Masukan jumlah mahasiswa: ";
+    cin >> jumlah;
 
-    cout << "Angka dikeluarkan: " << n << endl;
-    cout << "Nilai Konstanta pl: " << pl << endl;
+    Mahasiswa mhs[jumlah];
+
+    // Input data menggunakan loop
+    for (int i = 0; i < jumlah; i++) {
+        cout << "\nMahasiswa ke-" << i + 1 << endl;
+        cout << "Nama: ";
+        cin >> mhs[i].nama;
+        cout << "Umur: ";
+        cin >> mhs[i].umur;
+    }
+
+    // Tampilkan data
+    cout << "\n== Data Mahasiswa ===\n";
+    for (int i = 0; i < jumlah; i++) {
+        cout << "Mahasiswa ke-" << i + 1
+             << " | Nama: " << mhs[i].nama
+             << " | Umur: " << mhs[i].umur << endl;
+    }
+
     return 0;
 }
 
@@ -29,32 +50,23 @@ int main () {
 using namespace std;
 
 int main () {
-    int a;
-    int b;
+    int i;
+    int j;
 
-    cout << "Masukan Angka1: ";
-    cin >> a;
-    cout << "Masukan Angka2: ";
-    cin >> b;
+    for (int i = 0; i <= 10; i++) {
+        cout << i << "-";
+    } 
 
-    //Operator Aritmatika
-    cout << "a + b = " << (a+b) << endl;
-    cout << "a - b = " << (a-b) << endl;
-    cout << "a * b = " << (a*b) << endl;
-    cout << "a / b = " << (a/b) << endl;
-    cout << "a % b = " << (a+b) << endl;
+    cout << endl;
 
-    //Operator Logika
-    cout << "a < b = " << (a<b) << endl;
-    cout << "a > b = " << (a>b) << endl;
-    cout << "a <= b = " << (a<=b) << endl;
-    cout << "a >= b = " << (a>=b) << endl;
-    cout << "a == b = " << (a==b) << endl;
-    cout << "a != b = " << (a!=b) << endl;
+    for (int j = 20; j >= 10; j--) {
+        cout << j << "-";
+    }
+
     return 0;
 }
 ```
-Kode di atas yang pertama ada input / output, lalu kedua ada Operator percabangan aritmatika
+Kode di atas yang pertama ada Struktur, lalu kedua ada Perulangan.
 
 ## Unguided 
 
@@ -120,7 +132,7 @@ int main() {
 #### Output:
 <img width="311" height="487" alt="Image" src="https://github.com/user-attachments/assets/f5a8480a-02f5-4200-91b4-bd58657241a5" />
 
-Kode di atas digunakan untuk mengambil dua input angka yang kita masukan dan menampilkan hasil dari empat operasi aritmatika.
+Program di atas digunakan untuk mencari operasi penjumlahan, pengurangan, dan perkalian matriks 3x3.
 
 #### Full code Screenshot:
 <img width="421" height="970" alt="Image" src="https://github.com/user-attachments/assets/d0948005-e169-4211-9a06-7c0839c0c5f9" />
@@ -153,7 +165,7 @@ int main() {
 #### Output:
 <img width="481" height="157" alt="Image" src="https://github.com/user-attachments/assets/ab064933-f9cd-425f-b05c-41de4b01ba47" />
 
-Program diatas fungsinya membaca input angka (0–100), lalu menampilkan output dalam bentuk kata.
+Program diatas fungsinya untuk menukar nilai dari 3 variabel.
 
 #### Full code Screenshot:
 <img width="829" height="910" alt="Image" src="https://github.com/user-attachments/assets/be6ca6a2-239e-4c0c-aefa-81ef4013eff8" />
@@ -230,7 +242,7 @@ int main() {
 #### Output:
 <img width="334" height="630" alt="Image" src="https://github.com/user-attachments/assets/7efe2201-3578-4253-82b7-1b55c953fdeb" />
 
-Program diatas menampilkan pola angka menurun dan menaik yang terpisah oleh tanda *, Sampai berbentuk segitiga terbalik.
+Program diatas kita diminta untuk mencari nilai minimum, maximum, dan rata rata dari array yang disediakan.
 
 #### Full code Screenshot:
 <img width="479" height="911" alt="Image" src="https://github.com/user-attachments/assets/e0e09717-8c3d-4452-9c78-b87ae73a9a8a" />
@@ -239,7 +251,8 @@ Program diatas menampilkan pola angka menurun dan menaik yang terpisah oleh tand
 Modul ini mengajarkan konsep dasar menggunakan array dan matriks, lalu penerapan fungsi, prosedur, pointer dalam pemrograman c++.
 
 ## Referensi
-[1] PEMROGRAMAN, ALGORITMA; FIRNANDA, MUHAMMAD ADITYA. LAPORAN PRAKTIKUM I. 2016.
+[1] Ginting, S. H. N., Effendi, H., Kumar, S., Marsisno, W., Sitanggang, Y. R. U., Anwar, K & Smrti, N. N. E. (2024).
+[2] Sianipar, R. H. (2012). Pemrograman C++: Dasar Pemrograman Berorientasi Objek (Vol. 1).
 
 
 
