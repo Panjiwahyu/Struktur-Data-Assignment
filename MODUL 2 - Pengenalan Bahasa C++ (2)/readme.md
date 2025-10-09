@@ -3,7 +3,7 @@
 
 ## Dasar Teori
 
-Pertama ada array fungsinya untukmenyimpan sekumpulan data, Array 2 dimensi untuk operasi aritmatika, pointer yang berfungsi sebagai variable yang menyimpan alamat memoridan yang terakhir ada switch case.
+Pertama ada array fungsinya untuk menyimpan sekumpulan data, Array 2 dimensi untuk operasi aritmatika, pointer yang berfungsi sebagai variable yang menyimpan alamat memoridan yang terakhir ada switch case.
 
 ## Guided 
 
@@ -183,6 +183,7 @@ Pembelajaran tentang materi input / output, if else dan juga percabangan operasi
 
 ## Referensi
 [1] PEMROGRAMAN, ALGORITMA; FIRNANDA, MUHAMMAD ADITYA. LAPORAN PRAKTIKUM I. 2016.
+
 
 
 
