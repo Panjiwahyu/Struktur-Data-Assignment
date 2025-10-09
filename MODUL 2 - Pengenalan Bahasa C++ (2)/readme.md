@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul Code Blocks IDE & Pengenalan Bahasa C++ (1)</h1>
+# <h1 align="center">Laporan Praktikum Latihan Modul 2 Praktikum Struktur Data S1-IF(1)</h1>
 <p align="center">Panji Wahyu Nugroho</p>
 
 ## Dasar Teori
@@ -183,4 +183,5 @@ Pembelajaran tentang materi input / output, if else dan juga percabangan operasi
 
 ## Referensi
 [1] PEMROGRAMAN, ALGORITMA; FIRNANDA, MUHAMMAD ADITYA. LAPORAN PRAKTIKUM I. 2016.
+
 
