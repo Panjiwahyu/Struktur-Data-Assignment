@@ -252,7 +252,9 @@ Modul ini mengajarkan konsep dasar menggunakan array dan matriks, lalu penerapan
 
 ## Referensi
 [1] Ginting, S. H. N., Effendi, H., Kumar, S., Marsisno, W., Sitanggang, Y. R. U., Anwar, K & Smrti, N. N. E. (2024).
+
 [2] Sianipar, R. H. (2012). Pemrograman C++: Dasar Pemrograman Berorientasi Objek (Vol. 1).
+
 
 
 
