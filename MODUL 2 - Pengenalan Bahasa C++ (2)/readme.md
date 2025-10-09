@@ -93,7 +93,8 @@ int main() {
 Kode di atas digunakan untuk mengambil dua input angka yang kita masukan dan menampilkan hasil dari empat operasi aritmatika.
 
 #### Full code Screenshot:
-<img width="766" height="997" alt="Image" src="https://github.com/user-attachments/assets/07861d97-f511-413c-8831-d0b4b63cb459" />
+![Uploading image.png…]()
+
 
 ### 2. [Soal]
 
@@ -101,51 +102,34 @@ Kode di atas digunakan untuk mengambil dua input angka yang kita masukan dan men
 #include <iostream>
 using namespace std;
 
+void tukar3(int *a, int *b, int *c) {
+    int temp = *a;
+    *a = *b;
+    *b = *c;
+    *c = temp;
+}
+
 int main() {
-    int angka;
-   string tulisan = "";
-   string satuan[] = {"", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan"};
+    int x, y, z;
+    cout << "Masukkan nilai x, y, z: ";
+    cin >> x >> y >> z;
 
-   cout << "Masukkan angka (0-100): ";
-   cin >> angka;
-
-    if (angka < 0 || angka > 100) {
-        tulisan = "Input di luar jangkauan (0-100).";
-    } else if (angka == 0) {
-        tulisan = "nol";
-    } else if (angka == 100) {
-        tulisan = "seratus";
-    } else if (angka == 10) {
-        tulisan = "sepuluh";
-    } else if (angka == 11) {
-        tulisan = "sebelas";
-    } else if (angka < 10) {
-        tulisan = satuan[angka];
-    } else if (angka < 20) { 
-        tulisan = satuan[angka % 10] + " belas";
-    } else { 
-        int puluhan = angka / 10;
-        int sisa = angka % 10;
-        tulisan = satuan[puluhan] + " puluh";
-        if (sisa > 0) {
-            tulisan += " " + satuan[sisa];
-        }
-    }
-
-   cout << angka << " : " << tulisan <<endl;
+    cout << "Sebelum ditukar: x=" << x << ", y=" << y << ", z=" << z << endl;
+    tukar3(&x, &y, &z);
+    cout << "Setelah ditukar: x=" << x << ", y=" << y << ", z=" << z << endl;
 
     return 0;
 }
 ```
 #### Output:
-<img width="471" height="134" alt="Image" src="https://github.com/user-attachments/assets/20119050-15af-423d-bc7e-195246a1d398" />
+<img width="481" height="157" alt="Image" src="https://github.com/user-attachments/assets/ab064933-f9cd-425f-b05c-41de4b01ba47" />
 
 Program diatas fungsinya membaca input angka (0–100), lalu menampilkan output dalam bentuk kata.
 
 #### Full code Screenshot:
-<img width="925" height="1021" alt="Image" src="https://github.com/user-attachments/assets/8cc7abeb-e87e-415e-aaf1-3166498f63c0" />
-### 3. [Soal]
+<img width="829" height="910" alt="Image" src="https://github.com/user-attachments/assets/be6ca6a2-239e-4c0c-aefa-81ef4013eff8" />
 
+### 3. [Soal]
 ```C++
 #include <iostream>
 using namespace std;
@@ -199,3 +183,4 @@ Pembelajaran tentang materi input / output, if else dan juga percabangan operasi
 
 ## Referensi
 [1] PEMROGRAMAN, ALGORITMA; FIRNANDA, MUHAMMAD ADITYA. LAPORAN PRAKTIKUM I. 2016.
+
