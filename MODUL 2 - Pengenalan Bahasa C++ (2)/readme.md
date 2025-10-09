@@ -7,7 +7,7 @@ Pertama ada array fungsinya untuk menyimpan sekumpulan data, Array 2 dimensi unt
 
 ## Guided 
 
-### 1. [Struktur Dan Perulangan]
+### 1. [Pengenalan Bahasa C++]
 
 ```C++
 #include <iostream>
@@ -254,6 +254,7 @@ Modul ini mengajarkan konsep dasar menggunakan array dan matriks, lalu penerapan
 [1] Ginting, S. H. N., Effendi, H., Kumar, S., Marsisno, W., Sitanggang, Y. R. U., Anwar, K & Smrti, N. N. E. (2024).
 
 [2] Sianipar, R. H. (2012). Pemrograman C++: Dasar Pemrograman Berorientasi Objek (Vol. 1).
+
 
 
 
