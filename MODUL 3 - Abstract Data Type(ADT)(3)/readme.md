@@ -91,7 +91,7 @@ Program di atas digunakan untuk menyimpan dan menghitung data nilai mahasiswa (m
 #### Full code Screenshot:
 <img width="509" height="814" alt="Image" src="https://github.com/user-attachments/assets/e0c776ee-bd6e-4250-b348-d0b3dbaba50b" />
 
-### 2. []
+### 2.
 
 ```C++
 //pelajaran.h
@@ -152,7 +152,7 @@ Program diatas fungsinya untuk membuat dan menampilkan data mata pelajaran mengg
 <img width="627" height="393" alt="Image" src="https://github.com/user-attachments/assets/3a281009-8918-4282-94f4-e8d83e777905" />
 <img width="604" height="341" alt="Image" src="https://github.com/user-attachments/assets/499d1d2f-6316-45d1-b8f3-8ee34e22f708" />
 
-### 3. []
+### 3.
 ```C++
 #include <iostream>
 using namespace std;
@@ -200,9 +200,13 @@ int main() {
 
 Program diatas kita diminta untuk membuat program.
 Buatlah program dengan ketentuan : 
+
     - 2 buah array 2D integer berukuran 3x3 dan 2 buah pointer integer 
+    
     - fungsi/prosedur yang menampilkan isi sebuah array integer 2D 
+    
     - fungsi/prosedur yang akan menukarkan isi dari 2 array integer 2D pada posisi tertentu 
+    
     - fungsi/prosedur yang akan menukarkan isi dari variabel yang ditunjuk oleh 2 buah pointer.
 
 #### Full code Screenshot:
@@ -210,11 +214,14 @@ Buatlah program dengan ketentuan :
 
 ## Kesimpulan
 Ketiga program mengajarkan dasar dasar penting C++ 
+
 — mulai dari penggunaan array, fungsi, struct (ADT), hingga pointer sebagai fondasi logika pemrograman dan pengelolaan data secara efisien.
 
 ## Referensi
 [1] Schildt, H. (2014). C++: The Complete Reference (4th ed.). McGraw-Hill Education.
+
 [2] Stroustrup, B. (2013). The C++ Programming Language (4th ed.). Addison-Wesley.
+
 
 
 
