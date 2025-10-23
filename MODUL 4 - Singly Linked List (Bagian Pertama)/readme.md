@@ -3,6 +3,7 @@
 
 ## Dasar Teori
 
+berfokus pada definisi, karakteristik, dan operasi dasar dari struktur data ini, yang sangat penting sebagai fondasi komputasi dinamis.
 
 ## Guided 
 
@@ -245,200 +246,309 @@ int main(){
     return 0;
 }
 ```
-Kode di atas digunakan untuk menginput dan menghitung rata-rata nilai mahasiswa menggunakan Abstract Data Type (ADT).
+Kode di atas digunakan untuk membuat, mengelola, dan menampilkan data mahasiswa menggunakan struktur data linked list (singly linked list) dalam bahasa C++.
 
 ## Unguided 
 
 ### 1. 
 
 ```C++
+//Singlylist.h
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
+
+#include <cstdlib>
+
+typedef int infotype;
+typedef struct Elmlist *address;
+
+typedef struct Elmlist {
+    infotype info;
+    address next;
+} Elmlist;
+
+typedef struct {
+    address First;
+} List;
+
+void CreateList(List *L);
+
+address alokasi(infotype x);
+
+void printInfo(List L);
+
+void insertFirst(List *L, address P);
+
+#endif
+
+//Singlylist.cpp
+#include "Singlylist.h"
 #include <iostream>
+
 using namespace std;
 
-float hitungNilaiAkhir(float uts, float uas, float tugas) {
-    return 0.3 * uts + 0.4 * uas + 0.3 * tugas;
+void CreateList(List *L) {
+    L->First = NULL;
 }
 
+address alokasi(infotype x) {
+    address P = (address)malloc(sizeof(Elmlist));
+    if (P != NULL) {
+        P->info = x;
+        P->next = NULL;
+    }
+    return P;
+}
+
+void printInfo(List L) {
+    address P = L.First;
+    while (P != NULL) {
+        cout << P->info << " ";
+        P = P->next;
+    }
+    cout << endl;
+}
+
+void insertFirst(List *L, address P) {
+    P->next = L->First;
+    L->First = P;
+}
+
+//main.cpp
+#include "Singlylist.h"
+#include <iostream>
+
+using namespace std;
+
 int main() {
-    const int MAX = 10;
-    string nama[MAX];
-    string nim[MAX];
-    float uts[MAX], uas[MAX], tugas[MAX], nilaiAkhir[MAX];
-    int n;
+    List L;
+    address P1, P2, P3, P4, P5; 
 
-    cout << "Masukkan jumlah mahasiswa (maks 10): ";
-    cin >> n;
+    P1 = P2 = P3 = P4 = P5 = NULL;
+    CreateList(&L);
+ 
+    P1 = alokasi(2);
+    insertFirst(&L, P1);
 
-    if (n > MAX) {
-        cout << "Jumlah mahasiswa tidak boleh lebih dari 10!\n";
-        return 0;
-    }
+    P2 = alokasi(0);
+    insertFirst(&L, P2);
 
-    for (int i = 0; i < n; i++) {
-        cout << "\nData mahasiswa ke-" << i + 1 << endl;
-        cout << "Nama (tanpa spasi) : ";
-        cin >> nama[i];
-        cout << "NIM                : ";
-        cin >> nim[i];
-        cout << "Nilai UTS          : ";
-        cin >> uts[i];
-        cout << "Nilai UAS          : ";
-        cin >> uas[i];
-        cout << "Nilai Tugas        : ";
-        cin >> tugas[i];
+    P3 = alokasi(8);
+    insertFirst(&L, P3);
 
-        nilaiAkhir[i] = hitungNilaiAkhir(uts[i], uas[i], tugas[i]);
-    }
+    P4 = alokasi(12);
+    insertFirst(&L, P4);
 
-    cout << "\n==============================================\n";
-    cout << "No\tNama\tNIM\tNilai Akhir\n";
-    cout << "==============================================\n";
-    for (int i = 0; i < n; i++) {
-        cout << i + 1 << "\t" << nama[i] << "\t" << nim[i]
-             << "\t" << nilaiAkhir[i] << endl;
-    }
+    P5 = alokasi(9);
+    insertFirst(&L, P5);
+    
+    cout << "\nOutput yang diharapkan: " << endl;
+    cout << "9 12 8 0 2" << endl;
 
     return 0;
 }
 ```
 #### Output:
-<img width="429" height="515" alt="Image" src="https://github.com/user-attachments/assets/5ed94911-3d15-43d7-a745-14b66512424b" />
+<img width="482" height="113" alt="Image" src="https://github.com/user-attachments/assets/596ff539-d65b-4b53-a495-a2dff95ba647" />
 
-Program di atas digunakan untuk menyimpan dan menghitung data nilai mahasiswa (maksimal 10 orang).
+Program di atas digunakan untuk mengimplementasikan dan menguji pembentukan struktur dataSinglylist dengan urutan elemen.
 
 #### Full code Screenshot:
-<img width="509" height="814" alt="Image" src="https://github.com/user-attachments/assets/e0c776ee-bd6e-4250-b348-d0b3dbaba50b" />
+<img width="371" height="545" alt="Image" src="https://github.com/user-attachments/assets/ef107699-48ac-48d9-b2ba-735f9e5ac6ef" />
+<img width="471" height="639" alt="Image" src="https://github.com/user-attachments/assets/c896a44c-4733-47db-b4d0-e3bfaf92ce43" />
+<img width="468" height="662" alt="Image" src="https://github.com/user-attachments/assets/cf00fcd2-72b0-45ae-9c38-935d73f8bac7" />
 
 ### 2.
 
 ```C++
-//pelajaran.h
-#ifndef PELAJARAN_H
-#define PELAJARAN_H
-#include <string>
-using namespace std;
+//Singlylist.h
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
 
-struct pelajaran {
-    string namaMapel;
-    string kodeMapel;
-};
+#include <cstdlib>
 
-pelajaran create_pelajaran(string nama, string kode);
-void tampil_pelajaran(pelajaran pel);
+typedef int infotype;
+typedef struct Elmlist *address;
+
+typedef struct Elmlist {
+    infotype info;
+    address next;
+} Elmlist;
+
+typedef struct {
+    address First;
+} List;
+
+void CreateList(List *L);
+address alokasi(infotype x);
+void dealokasi(address P); 
+void printInfo(List L);
+int nbList(List L);
+
+void insertFirst(List *L, address P);
+
+void deleteFirst(List *L, address *Pdel);
+void deleteLast(List *L, address *Pdel);
+void deleteAfter(List *L, address *Pdel, address Prec);
+void deleteList(List *L);
 
 #endif
 
-//pelajaran.cpp
+//Singlylist.cpp
+#include "Singlylist.h"
 #include <iostream>
-#include "pelajaran.h"
+
 using namespace std;
 
-pelajaran create_pelajaran(string nama, string kode) {
-    pelajaran p;
-    p.namaMapel = nama;
-    p.kodeMapel = kode;
-    return p;
+void CreateList(List *L) {
+    L->First = NULL;
 }
 
-void tampil_pelajaran(pelajaran pel) {
-    cout << "nama pelajaran : " << pel.namaMapel << endl;
-    cout << "nilai : " << pel.kodeMapel << endl;
+address alokasi(infotype x) {
+    address P = (address)malloc(sizeof(Elmlist));
+    if (P != NULL) {
+        P->info = x;
+        P->next = NULL;
+    }
+    return P;
 }
 
-//Main.cpp
+void dealokasi(address P) {
+    if (P != NULL) {
+        free(P);
+    }
+}
+
+void printInfo(List L) {
+    address P = L.First;
+    while (P != NULL) {
+        cout << P->info << " ";
+        P = P->next;
+    }
+    cout << endl;
+}
+
+int nbList(List L) {
+    int count = 0;
+    address P = L.First;
+    while (P != NULL) {
+        count++;
+        P = P->next;
+    }
+    return count;
+}
+
+void insertFirst(List *L, address P) {
+    P->next = L->First;
+    L->First = P;
+}
+
+void deleteFirst(List *L, address *Pdel) {
+    *Pdel = NULL;
+    if (L->First != NULL) {
+        *Pdel = L->First;
+        L->First = L->First->next;
+        (*Pdel)->next = NULL; 
+    }
+}
+
+void deleteLast(List *L, address *Pdel) {
+    *Pdel = NULL;
+    if (L->First == NULL) return; 
+
+    address P = L->First;
+    address Prec = NULL;
+
+    if (P->next == NULL) {
+        *Pdel = P;
+        L->First = NULL;
+    } else {
+        while (P->next != NULL) {
+            Prec = P;
+            P = P->next;
+        }
+        *Pdel = P;
+        Prec->next = NULL;
+    }
+}
+
+void deleteAfter(List *L, address *Pdel, address Prec) {
+    *Pdel = NULL;
+    if (Prec != NULL && Prec->next != NULL) {
+        *Pdel = Prec->next; 
+        Prec->next = (*Pdel)->next; 
+        (*Pdel)->next = NULL;
+    }
+}
+
+void deleteList(List *L) {
+    address P;
+    while (L->First != NULL) {
+        deleteFirst(L, &P);
+        dealokasi(P);
+    }
+}
+
+//main.cpp
+#include "Singlylist.h"
 #include <iostream>
-#include "pelajaran.h"
+
 using namespace std;
 
 int main() {
-    string namaPel = "Struktur Data";
-    string kodePel = "STD";
+    List L;
+    address P1, P2, P3, P4, P5; 
+    address Pdel; 
+    
+    P1 = P2 = P3 = P4 = P5 = NULL;
+    CreateList(&L);
 
-    pelajaran pel = create_pelajaran(namaPel, kodePel);
-    tampil_pelajaran(pel);
+    P1 = alokasi(2); insertFirst(&L, P1); 
+    P2 = alokasi(0); insertFirst(&L, P2); 
+    P3 = alokasi(8); insertFirst(&L, P3); 
+    P4 = alokasi(12); insertFirst(&L, P4); 
+    P5 = alokasi(9); insertFirst(&L, P5); 
+    
+    deleteFirst(&L, &Pdel);
+    dealokasi(Pdel); 
+
+    deleteLast(&L, &Pdel);
+    dealokasi(Pdel);
+
+    address Prec_for_8 = L.First;
+    if (Prec_for_8 != NULL) {
+        deleteAfter(&L, &Pdel, Prec_for_8);
+        dealokasi(Pdel);
+    }
+
+    printInfo(L);
+    cout << "Jumlah node : " << nbList(L) << endl;
+
+    cout << "\n- List Berhasil Terhapus -" << endl;
+    deleteList(&L);
+    cout << "Jumlah node : " << nbList(L) << endl;
 
     return 0;
 }
 ```
 #### Output:
-<img width="301" height="169" alt="Image" src="https://github.com/user-attachments/assets/fa4e429c-be0d-458d-97f4-12e40f7339a3" />
+<img width="493" height="129" alt="Image" src="https://github.com/user-attachments/assets/75d59b22-ac82-4d7e-ac43-0e69d78f42e3" />
 
-Program diatas fungsinya untuk membuat dan menampilkan data mata pelajaran menggunakan konsep ADT.
-
-#### Full code Screenshot:
-<img width="594" height="373" alt="Image" src="https://github.com/user-attachments/assets/4e941211-4bae-485b-8976-e1005bcdba39" />
-<img width="627" height="393" alt="Image" src="https://github.com/user-attachments/assets/3a281009-8918-4282-94f4-e8d83e777905" />
-<img width="604" height="341" alt="Image" src="https://github.com/user-attachments/assets/499d1d2f-6316-45d1-b8f3-8ee34e22f708" />
-
-### 3.
-```C++
-#include <iostream>
-using namespace std;
-
-void tampil(int A[3][3]) {
-    for (int i=0;i<3;i++){
-        for (int j=0;j<3;j++)
-            cout << A[i][j] << "\t";
-        cout << endl;
-    }
-}
-
-void tukarArray(int A[3][3], int B[3][3], int i, int j) {
-    int temp = A[i][j];
-    A[i][j] = B[i][j];
-    B[i][j] = temp;
-}
-
-void tukarPointer(int *p1, int *p2) {
-    int temp = *p1;
-    *p1 = *p2;
-    *p2 = temp;
-}
-
-int main() {
-    int A[3][3]={{1,2,3},{4,5,6},{7,8,9}};
-    int B[3][3]={{9,8,7},{6,5,4},{3,2,1}};
-    int x=10, y=20, *p1=&x, *p2=&y;
-
-    cout << "Array A awal:\n"; tampil(A);
-    cout << "\nArray B awal:\n"; tampil(B);
-
-    tukarArray(A,B,1,1);
-    cout << "\nSetelah tukar elemen [1][1]:\n";
-    cout << "Array A:\n"; tampil(A);
-    cout << "Array B:\n"; tampil(B);
-
-    cout << "\nSebelum tukar pointer: x="<<x<<", y="<<y<<endl;
-    tukarPointer(p1,p2);
-    cout << "Setelah tukar pointer: x="<<x<<", y="<<y<<endl;
-}
-```
-#### Output:
-<img width="489" height="533" alt="Image" src="https://github.com/user-attachments/assets/ec6eede5-fb39-486b-a4ba-b1b5613fc081" />
-
-Program diatas kita diminta untuk membuat program.
-Buatlah program dengan ketentuan : 
-
-    - 2 buah array 2D integer berukuran 3x3 dan 2 buah pointer integer 
-    
-    - fungsi/prosedur yang menampilkan isi sebuah array integer 2D 
-    
-    - fungsi/prosedur yang akan menukarkan isi dari 2 array integer 2D pada posisi tertentu 
-    
-    - fungsi/prosedur yang akan menukarkan isi dari variabel yang ditunjuk oleh 2 buah pointer.
+Program diatas fungsinya untuk mengimplementasikan dan menguji operasi dasar dari struktur data ADT.
 
 #### Full code Screenshot:
-<img width="566" height="824" alt="Image" src="https://github.com/user-attachments/assets/02eed818-faf1-4963-8d17-f844404e1d72" />
+<img width="519" height="649" alt="Image" src="https://github.com/user-attachments/assets/5cb6beef-1510-4534-b24d-10bff3add595" />
+<img width="468" height="961" alt="Image" src="https://github.com/user-attachments/assets/7f145506-4520-475f-8a71-84b8ae159af1" />
+<img width="501" height="909" alt="Image" src="https://github.com/user-attachments/assets/a75eba00-0bb6-44d6-bc73-ea4b6176117a" />
+<img width="473" height="819" alt="Image" src="https://github.com/user-attachments/assets/8e98c893-fbe6-477d-9416-cb448d63c877" />
 
 ## Kesimpulan
-Ketiga program mengajarkan dasar dasar penting C++ 
 
-— mulai dari penggunaan array, fungsi, struct (ADT), hingga pointer sebagai fondasi logika pemrograman dan pengelolaan data secara efisien.
+Kesimpulan nya adalah bahwa program ini berhasil mengimplementasikan ADT (Abstract Data Type) Singly Linked List dan menguji fungsionalitas CRUD (Create, Read, Update, Delete) untuk struktur data tersebut.
 
 ## Referensi
-[1] Schildt, H. (2014). C++: The Complete Reference (4th ed.). McGraw-Hill Education.
+[1] Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2022). Introduction to algorithms (4th ed.). MIT Press.
 
-[2] Stroustrup, B. (2013). The C++ Programming Language (4th ed.). Addison-Wesley.
 
 
 
