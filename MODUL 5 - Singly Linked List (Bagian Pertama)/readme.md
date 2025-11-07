@@ -560,7 +560,9 @@ tetap seperti pada array.
 
 ## Referensi
 [1] Ariyus, D. (2018). Algoritma dan Struktur Data Menggunakan C++. Yogyakarta: Andi Publisher.
+
 [2] Telkom University. (2023). Modul Praktikum Struktur Data. Fakultas Informatika, Telkom University.
+
 
 
 
