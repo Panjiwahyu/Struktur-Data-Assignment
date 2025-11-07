@@ -3,13 +3,7 @@
 
 ## Dasar Teori
 
-# <h1 align="center">Laporan Praktikum Singly Linked List (Bagian Pertama)</h1>
-<p align="center">Panji Wahyu Nugroho</p>
-
-## Dasar Teori
-
-berfokus pada definisi, karakteristik, dan operasi dasar dari struktur data ini, yang sangat penting sebagai fondasi komputasi dinamis, operasi dasar CreateList, FindElm
-dan beberapa operasi lainnya.
+berfokus pada definisi, karakteristik, dan operasi dasar dari struktur data ini, yang sangat penting sebagai fondasi komputasi dinamis, operasi dasar CreateList, FindElm dan beberapa operasi lainnya.
 
 ## Guided 
 
@@ -567,6 +561,7 @@ tetap seperti pada array.
 ## Referensi
 [1] Ariyus, D. (2018). Algoritma dan Struktur Data Menggunakan C++. Yogyakarta: Andi Publisher.
 [2] Telkom University. (2023). Modul Praktikum Struktur Data. Fakultas Informatika, Telkom University.
+
 
 
 
