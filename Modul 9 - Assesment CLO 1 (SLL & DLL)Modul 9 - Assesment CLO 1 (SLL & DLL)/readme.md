@@ -1,4 +1,3 @@
-```C++
 SOAL 1
 //MAIN.CPP
 #include <iostream>
@@ -1051,8 +1050,6 @@ int TotalBiayaPengiriman(QueueEkspedisi Q);
 //OUTPUT
 <img width="454" height="797" alt="image" src="https://github.com/user-attachments/assets/93613294-82b6-40ae-857f-2a72fdf014da" />
 <img width="463" height="527" alt="image" src="https://github.com/user-attachments/assets/89b81e8f-340f-4d95-8778-402fb160e185" />
-
-```
     
 
 
