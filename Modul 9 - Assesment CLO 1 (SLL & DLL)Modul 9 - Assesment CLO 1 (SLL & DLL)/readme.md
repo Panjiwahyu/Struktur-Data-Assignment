@@ -1,5 +1,7 @@
-SOAL 1
-//MAIN.CPP
+### 1. 
+
+```C++
+//main.cpp
 #include <iostream>
 #include "SLLInventory.h"
 using namespace std;
@@ -40,8 +42,7 @@ int main() {
 
     return 0;
 }
-
-//SLLINVENTORY.CPP
+//SLLInventory.cpp
 #include "SLLInventory.h"
 
 bool isEmpty(List L) {
@@ -186,8 +187,7 @@ void MaxHargaAkhir(List L) {
     cout << maxNode->info.Nama 
          << " | Harga Akhir: " << hargaAkhir(maxNode->info) << endl;
 }
-
-//SLLINVENTORY.H
+//SLLInventory.h
     #ifndef SLLINVENTORY_H
     #define SLLINVENTORY_H
     #include <iostream>
@@ -226,15 +226,92 @@ void MaxHargaAkhir(List L) {
     void searchByFinalPriceRange(List l, float minp, float maxp);
     void MaxHargaAkhir(List L);
 
-    #endif  
+    #endif
+```
+#### Output:
 
-    //OUTPUT
-    <img width="488" height="366" alt="image" src="https://github.com/user-attachments/assets/2451aa8a-53fd-4d58-8853-0be6b5818cff" />
+<img width="482" height="395" alt="Image" src="https://github.com/user-attachments/assets/92a37890-3a20-487f-a1e3-d8c1d6c1c9ca" />
 
-    SOAL 2
-    ```C
-    //DLLPLAYLIST.CPP
-    #include "DLLPlaylist.h"
+### 2.
+
+```C++
+//main.cpp
+#include "DLLPlaylist.h"
+
+int main() {
+    List L;
+    Song tempSong;
+
+    Song lagu1 = createSong("Senja di Kota", "Nona Band", 210, 150, 4.2);
+    Song lagu2 = createSong("Langkahmu", "Delta", 185, 320, 4.8);
+    Song lagu3 = createSong("Hujan Pagi", "Arka", 240, 90, 3.9);
+
+    Song updateSong = createSong("Pelita", "Luna", 200, 260, 4.5);
+    Song insertSong = createSong("Senandung", "Mira", 175, 120, 4.0);
+    Song updateBeforeSong = createSong("Rindu", "Rana", 190, 100, 4.1);
+
+    std::cout << "1. Membuat list kosong (createList)..." << std::endl;
+    createList(L);
+    viewList(L);
+
+    std::cout << "\n2. Masukkan 3 lagu menggunakan insertLast..." << std::endl;
+    insertLast(L, lagu1);
+    insertLast(L, lagu2);
+    insertLast(L, lagu3);
+
+    std::cout << "\n3. Tampilkan list setelah 3x insertLast." << std::endl;
+    viewList(L);
+
+    std::cout << "\n4. Lakukan deleteLast sebanyak 1x..." << std::endl;
+    deleteLast(L, tempSong);
+    std::cout << "[*] Lagu yang dihapus: " << tempSong.Title << " oleh " << tempSong.Artist << std::endl;
+
+    std::cout << "\n   Tampilkan list setelah deleteLast." << std::endl;
+    viewList(L);
+
+    std::cout << "\n5. Update node pada posisi ke-2 (Lagu 'Langkahmu')..." << std::endl;
+    updateAtPosition(L, 2, updateSong);
+    std::cout << "[*] Node posisi 2 diupdate menjadi: " << updateSong.Title << std::endl;
+
+    std::cout << "\n6. Tampilkan list setelah update." << std::endl;
+    viewList(L);
+
+    address Q_posisi2 = searchNodeByPosition(L, 2);
+    if (Q_posisi2 == nullptr) return 1;
+
+    std::cout << "\n7. Operasi BEFORE (menggunakan Q = node posisi ke-2: " << Q_posisi2->info.Title << ")" << std::endl;
+
+    std::cout << "\na. insertBefore lagu 'Senandung' sebelum node posisi 2 ('Pelita')." << std::endl;
+    insertBefore(L, Q_posisi2, insertSong);
+
+    std::cout << "\n   Tampilkan list setelah insertBefore." << std::endl;
+    viewList(L);
+
+    std::cout << "\nb. updateBefore pada node posisi 2 (update node sebelum 'Pelita' menjadi 'Rindu')." << std::endl;
+    updateBefore(L, Q_posisi2, updateBeforeSong);
+
+    std::cout << "\n   Tampilkan list setelah updateBefore." << std::endl;
+    viewList(L);
+
+    address Q_posisi3 = searchNodeByPosition(L, 3);
+    if (Q_posisi3 != nullptr) {
+        std::cout << "\nc. deleteBefore pada node posisi 3 ('Pelita'). Menghapus node posisi 2 ('Rindu')." << std::endl;
+        deleteBefore(L, Q_posisi3, tempSong);
+        std::cout << "[*] Lagu yang dihapus: " << tempSong.Title << " oleh " << tempSong.Artist << std::endl;
+    }
+
+    std::cout << "\n   Tampilkan list setelah deleteBefore." << std::endl;
+    viewList(L);
+    
+    float min = 150.0;
+    float max = 300.0;
+    std::cout << "\n8. Searching berdasarkan PopularityScore (min=" << min << ", max=" << max << ")" << std::endl;
+    searchByPopularityRange(L, min, max);
+
+    return 0;
+}
+//DLLPlaylist.cpp
+#include "DLLPlaylist.h"
 
 Song createSong(std::string title, std::string artist, int duration, int playCount, float rating) {
     return {title, artist, duration, playCount, rating};
@@ -490,8 +567,7 @@ void searchByPopularityRange(List L, float minScore, float maxScore) {
     }
     std::cout << "=======================================================" << std::endl;
 }
-
-//DLLPLAYLIST.H
+//DLLPlaylist.h
 #ifndef DLLPLAYLIST_H
 #define DLLPLAYLIST_H
 
@@ -548,90 +624,16 @@ void viewList(List L);
 void searchByPopularityRange(List L, float minScore, float maxScore);
 
 #endif
+```
+#### Output:
 
-//MAIN.CPP
-#include "DLLPlaylist.h"
+<img width="473" height="647" alt="Image" src="https://github.com/user-attachments/assets/878b8e95-9abb-468b-9aa7-5661fdbf4f06" />
+<img width="509" height="946" alt="Image" src="https://github.com/user-attachments/assets/63d1cb8c-46d7-4034-b951-6e4b3b82e97f" />
 
-int main() {
-    List L;
-    Song tempSong;
+### 3.
 
-    Song lagu1 = createSong("Senja di Kota", "Nona Band", 210, 150, 4.2);
-    Song lagu2 = createSong("Langkahmu", "Delta", 185, 320, 4.8);
-    Song lagu3 = createSong("Hujan Pagi", "Arka", 240, 90, 3.9);
-
-    Song updateSong = createSong("Pelita", "Luna", 200, 260, 4.5);
-    Song insertSong = createSong("Senandung", "Mira", 175, 120, 4.0);
-    Song updateBeforeSong = createSong("Rindu", "Rana", 190, 100, 4.1);
-
-    std::cout << "1. Membuat list kosong (createList)..." << std::endl;
-    createList(L);
-    viewList(L);
-
-    std::cout << "\n2. Masukkan 3 lagu menggunakan insertLast..." << std::endl;
-    insertLast(L, lagu1);
-    insertLast(L, lagu2);
-    insertLast(L, lagu3);
-
-    std::cout << "\n3. Tampilkan list setelah 3x insertLast." << std::endl;
-    viewList(L);
-
-    std::cout << "\n4. Lakukan deleteLast sebanyak 1x..." << std::endl;
-    deleteLast(L, tempSong);
-    std::cout << "[*] Lagu yang dihapus: " << tempSong.Title << " oleh " << tempSong.Artist << std::endl;
-
-    std::cout << "\n   Tampilkan list setelah deleteLast." << std::endl;
-    viewList(L);
-
-    std::cout << "\n5. Update node pada posisi ke-2 (Lagu 'Langkahmu')..." << std::endl;
-    updateAtPosition(L, 2, updateSong);
-    std::cout << "[*] Node posisi 2 diupdate menjadi: " << updateSong.Title << std::endl;
-
-    std::cout << "\n6. Tampilkan list setelah update." << std::endl;
-    viewList(L);
-
-    address Q_posisi2 = searchNodeByPosition(L, 2);
-    if (Q_posisi2 == nullptr) return 1;
-
-    std::cout << "\n7. Operasi BEFORE (menggunakan Q = node posisi ke-2: " << Q_posisi2->info.Title << ")" << std::endl;
-
-    std::cout << "\na. insertBefore lagu 'Senandung' sebelum node posisi 2 ('Pelita')." << std::endl;
-    insertBefore(L, Q_posisi2, insertSong);
-
-    std::cout << "\n   Tampilkan list setelah insertBefore." << std::endl;
-    viewList(L);
-
-    std::cout << "\nb. updateBefore pada node posisi 2 (update node sebelum 'Pelita' menjadi 'Rindu')." << std::endl;
-    updateBefore(L, Q_posisi2, updateBeforeSong);
-
-    std::cout << "\n   Tampilkan list setelah updateBefore." << std::endl;
-    viewList(L);
-
-    address Q_posisi3 = searchNodeByPosition(L, 3);
-    if (Q_posisi3 != nullptr) {
-        std::cout << "\nc. deleteBefore pada node posisi 3 ('Pelita'). Menghapus node posisi 2 ('Rindu')." << std::endl;
-        deleteBefore(L, Q_posisi3, tempSong);
-        std::cout << "[*] Lagu yang dihapus: " << tempSong.Title << " oleh " << tempSong.Artist << std::endl;
-    }
-
-    std::cout << "\n   Tampilkan list setelah deleteBefore." << std::endl;
-    viewList(L);
-    
-    float min = 150.0;
-    float max = 300.0;
-    std::cout << "\n8. Searching berdasarkan PopularityScore (min=" << min << ", max=" << max << ")" << std::endl;
-    searchByPopularityRange(L, min, max);
-
-    return 0;
-}
-
-//OUTPUT
-<img width="472" height="865" alt="image" src="https://github.com/user-attachments/assets/333bca10-4eba-4e10-8ddc-3e99bc1365eb" />
-<img width="671" height="956" alt="image" src="https://github.com/user-attachments/assets/f916125e-06ac-43b3-b3d6-82828345ba99" />
-
-SOAL 3
-
-//MAIN.CPP
+```C++
+//main.cpp
 #include "StackMahasiswa.h"
 
 int main() {
@@ -684,7 +686,7 @@ int main() {
 
     return 0;
 }
-//STACKMAHASISWA.CPP
+//StackMahasiswa.cpp
 #include "StackMahasiswa.h"
 
 float hitungNilaiAkhir(Mahasiswa M) {
@@ -818,7 +820,7 @@ void MaxNilaiAkhir(StackMHS S) {
     std::cout << "Posisi di Stack: " << posisi << std::endl;
     std::cout << "==============================================" << std::endl;
 }
-//STACKMAHASISWA.H
+//StackMahasiswa.h
 #ifndef STACKMAHASISWA_H
 #define STACKMAHASISWA_H
 
@@ -853,203 +855,31 @@ void SearchNilaiAkhir(StackMHS S, float NilaiAkhirMin, float NilaiAkhirMax);
 void MaxNilaiAkhir(StackMHS S);
 
 #endif
-//OUTPUT
-<img width="561" height="647" alt="image" src="https://github.com/user-attachments/assets/6fbaf6b8-c105-41ba-9ba3-0f4fae0366ab" />
-<img width="588" height="573" alt="image" src="https://github.com/user-attachments/assets/4466a076-4daf-4041-806d-e030393a479f" />
+```
+#### Output:
 
-SOAL 4
-//MAIN.CPP
-#include "QueuePengiriman.h"
+<img width="424" height="551" alt="Image" src="https://github.com/user-attachments/assets/08d80162-2e03-4e85-b5e8-36550740306e" />
+<img width="451" height="475" alt="Image" src="https://github.com/user-attachments/assets/4acb797d-0abd-4a29-b336-5cac889f71ac" />
 
-void inputDataPaket(QueueEkspedisi& Q) {
-    std::cout << "\nInput 5 data paket (EnQueue):" << std::endl;
+### 4.
 
-    Paket p1 = createPaket("123456", "Hutao", 14, "Sumeru");
-    Paket p2 = createPaket("234567", "Ayaka", 10, "Fontaine");
-    Paket p3 = createPaket("345678", "Bennet", 7, "Natlan");
-    Paket p4 = createPaket("456789", "Furina", 16, "Liyue");
-    Paket p5 = createPaket("567890", "Nefer", 6, "Inazuma");
+```C++
 
-    enQueue(Q, p1);
-    enQueue(Q, p2);
-    enQueue(Q, p3);
-    enQueue(Q, p4);
-    enQueue(Q, p5);
-    
-    std::cout << "5 Paket berhasil di-EnQueue." << std::endl;
-}
+```
+#### Output:
+<img width="493" height="129" alt="Image" src="https://github.com/user-attachments/assets/75d59b22-ac82-4d7e-ac43-0e69d78f42e3" />
 
-int main() {
-    QueueEkspedisi Q;
-    Paket tempPaket;
-    int pilihan;
 
-    std::cout << "1) Membuat Queue Kosong (createQueue)..." << std::endl;
-    createQueue(Q);
 
-    do {
-        std::cout << "\nKomaniya Ekspress" << std::endl;
-        std::cout << "1. Input Data Paket" << std::endl;
-        std::cout << "2. Proses Data Paket (Dequeue)" << std::endl;
-        std::cout << "3. Tampilkan queue paket" << std::endl;
-        std::cout << "4. Hitung Total Biaya Pengiriman" << std::endl;
-        std::cout << "5. Keluar" << std::endl;
-        std::cout << "Pilihan anda: ";
-        std::cin >> pilihan;
 
-        switch (pilihan) {
-            case 1:
-                inputDataPaket(Q);
-                break;
-            case 2:
-                std::cout << "\n5) Lakukan deQueue sebanyak 1x..." << std::endl;
-                deQueue(Q, tempPaket);
-                std::cout << "Paket yang diproses (DeQueue): Resi " << tempPaket.KodeResi << " dari " << tempPaket.NamaPengirim << std::endl;
-                
-                std::cout << "\n6) Tampilkan queue setelah DeQueue 1x." << std::endl;
-                viewQueue(Q);
-                break;
-            case 3:
-                std::cout << "\n4) Tampilkan queue yang sudah diinput data paket." << std::endl;
-                viewQueue(Q);
-                break;
-            case 4:
-                {
-                    int totalBiaya = TotalBiayaPengiriman(Q);
-                    std::cout << "\nTotal Biaya Pengiriman semua paket di antrian: Rp " << totalBiaya << std::endl;
-                }
-                break;
-            case 5:
-                std::cout << "Keluar dari program." << std::endl;
-                break;
-            default:
-                std::cout << "Pilihan tidak valid." << std::endl;
-        }
-    } while (pilihan != 5);
 
-    return 0;
-}
-//QUEUEPENGIRIMAN.CPP
-#include "QueuePengiriman.h"
 
-Paket createPaket(std::string resi, std::string pengirim, int berat, std::string tujuan) {
-    return {resi, pengirim, berat, tujuan};
-}
 
-bool isEmpty(QueueEkspedisi Q) {
-    return Q.Tail == -1;
-}
 
-bool isFull(QueueEkspedisi Q) {
-    return Q.Tail == MAX - 1;
-}
 
-void createQueue(QueueEkspedisi& Q) {
-    Q.Head = 0;
-    Q.Tail = -1;
-}
 
-void enQueue(QueueEkspedisi& Q, Paket P) {
-    if (isFull(Q)) {
-        std::cout << "Antrian Penuh. EnQueue gagal." << std::endl;
-        return;
-    }
-    Q.Tail++;
-    Q.dataPaket[Q.Tail] = P;
-}
 
-void deQueue(QueueEkspedisi& Q, Paket& P) {
-    if (isEmpty(Q)) {
-        std::cout << "Antrian Kosong. DeQueue gagal." << std::endl;
-        return;
-    }
 
-    P = Q.dataPaket[Q.Head];
 
-    for (int i = Q.Head; i < Q.Tail; i++) {
-        Q.dataPaket[i] = Q.dataPaket[i + 1];
-    }
-    
-    Q.Tail--;
-
-    if (Q.Tail == -1) {
-        Q.Head = 0;
-    }
-}
-
-void viewQueue(QueueEkspedisi Q) {
-    std::cout << "\nIsi Antrian Paket (Komaniya Ekspress)" << std::endl;
-    if (isEmpty(Q)) {
-        std::cout << "[Antrian Kosong]" << std::endl;
-        return;
-    }
-
-    std::cout << "Indeks | Resi | Pengirim | Berat(kg) | Tujuan" << std::endl;
-    std::cout << "0 | Head (Keluar)" << std::endl;
-
-    for (int i = Q.Head; i <= Q.Tail; i++) {
-        std::cout << i << " | "
-                  << Q.dataPaket[i].KodeResi << " | "
-                  << Q.dataPaket[i].NamaPengirim << " | "
-                  << Q.dataPaket[i].BeratBarang << " | "
-                  << Q.dataPaket[i].Tujuan;
-        
-        if (i == Q.Tail) {
-            std::cout << " | Tail (Masuk)";
-        }
-        std::cout << std::endl;
-    }
-}
-
-int TotalBiayaPengiriman(QueueEkspedisi Q) {
-    if (isEmpty(Q)) {
-        return 0;
-    }
-
-    int totalBerat = 0;
-    for (int i = Q.Head; i <= Q.Tail; i++) {
-        totalBerat += Q.dataPaket[i].BeratBarang;
-    }
-
-    return totalBerat * BIAYA_PER_KG;
-}
-//QUEUEPENGIRIMAN.H
-#ifndef QUEUEPENGIRIMAN_H
-#define QUEUEPENGIRIMAN_H
-
-#include <iostream>
-#include <string>
-
-const int MAX = 5;
-const int BIAYA_PER_KG = 8250;
-
-typedef struct {
-    std::string KodeResi;
-    std::string NamaPengirim;
-    int BeratBarang;
-    std::string Tujuan;
-} Paket;
-
-typedef struct {
-    Paket dataPaket[MAX];
-    int Head;
-    int Tail;
-} QueueEkspedisi;
-
-Paket createPaket(std::string resi, std::string pengirim, int berat, std::string tujuan);
-
-bool isEmpty(QueueEkspedisi Q);
-bool isFull(QueueEkspedisi Q);
-void createQueue(QueueEkspedisi& Q);
-void enQueue(QueueEkspedisi& Q, Paket P);
-void deQueue(QueueEkspedisi& Q, Paket& P);
-void viewQueue(QueueEkspedisi Q);
-int TotalBiayaPengiriman(QueueEkspedisi Q);
-
-#endif
-//OUTPUT
-<img width="454" height="797" alt="image" src="https://github.com/user-attachments/assets/93613294-82b6-40ae-857f-2a72fdf014da" />
-<img width="463" height="527" alt="image" src="https://github.com/user-attachments/assets/89b81e8f-340f-4d95-8778-402fb160e185" />
-    
 
 
