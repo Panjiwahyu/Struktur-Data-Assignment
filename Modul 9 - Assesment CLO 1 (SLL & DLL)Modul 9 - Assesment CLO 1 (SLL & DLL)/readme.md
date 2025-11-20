@@ -864,10 +864,201 @@ void MaxNilaiAkhir(StackMHS S);
 ### 4.
 
 ```C++
+//main.cpp
+#include "QueuePengiriman.h"
 
+void inputDataPaket(QueueEkspedisi& Q) {
+    std::cout << "\nInput 5 data paket (EnQueue):" << std::endl;
+
+    Paket p1 = createPaket("123456", "Hutao", 14, "Sumeru");
+    Paket p2 = createPaket("234567", "Ayaka", 10, "Fontaine");
+    Paket p3 = createPaket("345678", "Bennet", 7, "Natlan");
+    Paket p4 = createPaket("456789", "Furina", 16, "Liyue");
+    Paket p5 = createPaket("567890", "Nefer", 6, "Inazuma");
+
+    enQueue(Q, p1);
+    enQueue(Q, p2);
+    enQueue(Q, p3);
+    enQueue(Q, p4);
+    enQueue(Q, p5);
+    
+    std::cout << "5 Paket berhasil di-EnQueue." << std::endl;
+}
+
+int main() {
+    QueueEkspedisi Q;
+    Paket tempPaket;
+    int pilihan;
+
+    std::cout << "1) Membuat Queue Kosong (createQueue)..." << std::endl;
+    createQueue(Q);
+
+    do {
+        std::cout << "\nKomaniya Ekspress" << std::endl;
+        std::cout << "1. Input Data Paket" << std::endl;
+        std::cout << "2. Proses Data Paket (Dequeue)" << std::endl;
+        std::cout << "3. Tampilkan queue paket" << std::endl;
+        std::cout << "4. Hitung Total Biaya Pengiriman" << std::endl;
+        std::cout << "5. Keluar" << std::endl;
+        std::cout << "Pilihan anda: ";
+        std::cin >> pilihan;
+
+        switch (pilihan) {
+            case 1:
+                inputDataPaket(Q);
+                break;
+            case 2:
+                std::cout << "\n5) Lakukan deQueue sebanyak 1x..." << std::endl;
+                deQueue(Q, tempPaket);
+                std::cout << "Paket yang diproses (DeQueue): Resi " << tempPaket.KodeResi << " dari " << tempPaket.NamaPengirim << std::endl;
+                
+                std::cout << "\n6) Tampilkan queue setelah DeQueue 1x." << std::endl;
+                viewQueue(Q);
+                break;
+            case 3:
+                std::cout << "\n4) Tampilkan queue yang sudah diinput data paket." << std::endl;
+                viewQueue(Q);
+                break;
+            case 4:
+                {
+                    int totalBiaya = TotalBiayaPengiriman(Q);
+                    std::cout << "\nTotal Biaya Pengiriman semua paket di antrian: Rp " << totalBiaya << std::endl;
+                }
+                break;
+            case 5:
+                std::cout << "Keluar dari program." << std::endl;
+                break;
+            default:
+                std::cout << "Pilihan tidak valid." << std::endl;
+        }
+    } while (pilihan != 5);
+
+    return 0;
+}
+//queuepengiriman.cpp
+#include "QueuePengiriman.h"
+
+Paket createPaket(std::string resi, std::string pengirim, int berat, std::string tujuan) {
+    return {resi, pengirim, berat, tujuan};
+}
+
+bool isEmpty(QueueEkspedisi Q) {
+    return Q.Tail == -1;
+}
+
+bool isFull(QueueEkspedisi Q) {
+    return Q.Tail == MAX - 1;
+}
+
+void createQueue(QueueEkspedisi& Q) {
+    Q.Head = 0;
+    Q.Tail = -1;
+}
+
+void enQueue(QueueEkspedisi& Q, Paket P) {
+    if (isFull(Q)) {
+        std::cout << "Antrian Penuh. EnQueue gagal." << std::endl;
+        return;
+    }
+    Q.Tail++;
+    Q.dataPaket[Q.Tail] = P;
+}
+
+void deQueue(QueueEkspedisi& Q, Paket& P) {
+    if (isEmpty(Q)) {
+        std::cout << "Antrian Kosong. DeQueue gagal." << std::endl;
+        return;
+    }
+
+    P = Q.dataPaket[Q.Head];
+
+    for (int i = Q.Head; i < Q.Tail; i++) {
+        Q.dataPaket[i] = Q.dataPaket[i + 1];
+    }
+    
+    Q.Tail--;
+
+    if (Q.Tail == -1) {
+        Q.Head = 0;
+    }
+}
+
+void viewQueue(QueueEkspedisi Q) {
+    std::cout << "\nIsi Antrian Paket (Komaniya Ekspress)" << std::endl;
+    if (isEmpty(Q)) {
+        std::cout << "[Antrian Kosong]" << std::endl;
+        return;
+    }
+
+    std::cout << "Indeks | Resi | Pengirim | Berat(kg) | Tujuan" << std::endl;
+    std::cout << "0 | Head (Keluar)" << std::endl;
+
+    for (int i = Q.Head; i <= Q.Tail; i++) {
+        std::cout << i << " | "
+                  << Q.dataPaket[i].KodeResi << " | "
+                  << Q.dataPaket[i].NamaPengirim << " | "
+                  << Q.dataPaket[i].BeratBarang << " | "
+                  << Q.dataPaket[i].Tujuan;
+        
+        if (i == Q.Tail) {
+            std::cout << " | Tail (Masuk)";
+        }
+        std::cout << std::endl;
+    }
+}
+
+int TotalBiayaPengiriman(QueueEkspedisi Q) {
+    if (isEmpty(Q)) {
+        return 0;
+    }
+
+    int totalBerat = 0;
+    for (int i = Q.Head; i <= Q.Tail; i++) {
+        totalBerat += Q.dataPaket[i].BeratBarang;
+    }
+
+    return totalBerat * BIAYA_PER_KG;
+}
+//queuepengiriman.h
+#ifndef QUEUEPENGIRIMAN_H
+#define QUEUEPENGIRIMAN_H
+
+#include <iostream>
+#include <string>
+
+const int MAX = 5;
+const int BIAYA_PER_KG = 8250;
+
+typedef struct {
+    std::string KodeResi;
+    std::string NamaPengirim;
+    int BeratBarang;
+    std::string Tujuan;
+} Paket;
+
+typedef struct {
+    Paket dataPaket[MAX];
+    int Head;
+    int Tail;
+} QueueEkspedisi;
+
+Paket createPaket(std::string resi, std::string pengirim, int berat, std::string tujuan);
+
+bool isEmpty(QueueEkspedisi Q);
+bool isFull(QueueEkspedisi Q);
+void createQueue(QueueEkspedisi& Q);
+void enQueue(QueueEkspedisi& Q, Paket P);
+void deQueue(QueueEkspedisi& Q, Paket& P);
+void viewQueue(QueueEkspedisi Q);
+int TotalBiayaPengiriman(QueueEkspedisi Q);
+
+#endif
 ```
 #### Output:
-<img width="493" height="129" alt="Image" src="https://github.com/user-attachments/assets/75d59b22-ac82-4d7e-ac43-0e69d78f42e3" />
+
+<img width="358" height="533" alt="Image" src="https://github.com/user-attachments/assets/62999f24-3d16-40f6-887e-01095d977113" />
+<img width="361" height="576" alt="Image" src="https://github.com/user-attachments/assets/49a9bace-5c47-4336-b8ae-87615290aadb" />
+
 
 
 
