@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum DoubleLinked List (Bagian Pertama)</h1>
+# <h1 align="center">Laporan Praktikum Stack</h1>
 <p align="center">Panji Wahyu Nugroho</p>
 
 ## Dasar Teori
@@ -302,6 +302,7 @@ array mampu menyimpan dan memanipulasi data secara efektif menggunakan prinsip L
 
 ## Referensi
 [1] Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2022). Introduction to algorithms (4th ed.). MIT Press.
+
 
 
 
