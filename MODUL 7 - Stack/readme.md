@@ -8,7 +8,7 @@ yaitu elemen yang terakhir dimasukkan ke dalam stack akan menjadi elemen pertama
 
 ## Guided 
 
-### 1. [Double Linked List (Bagian Pertama)]
+### 1. [Stack]
 
 ```C++
 //Stack.h
@@ -302,6 +302,7 @@ array mampu menyimpan dan memanipulasi data secara efektif menggunakan prinsip L
 
 ## Referensi
 [1] Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2022). Introduction to algorithms (4th ed.). MIT Press.
+
 
 
 
